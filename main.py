@@ -19,7 +19,7 @@ class block:
     def packet( self ) -> tuple:
         return zip(self.uid,self.previous,self.next,self.alternatives,self.cat,self.data)
 
-    def gen_hash( self , alg = sha1 ):
+    def gen_hash( self , alg = SHA ):
         uid = self.uid
         self.hash = alg(bytes(self.uid,encoding = "UTF-8"))
 
